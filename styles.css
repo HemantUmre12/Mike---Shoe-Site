@@ -1,0 +1,259 @@
+/*
+=============== 
+Fonts
+===============
+*/
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
+
+/*
+=============== 
+Variables
+===============
+*/
+
+:root {
+  /* background */
+  --bg-primary: linear-gradient(225.63deg, #37445B -17.16%, #19202C 79.72%);
+  --bg-search: #ECEFF2;
+  --bg-button: #3F88EB;
+  /* text */
+  --clr-primary-text: hsla(218, 28%, 14%, 1);
+  --clr-secondary-text: hsla(218, 28%, 14%, 1);
+  --clr-search-text: hsla(218, 28%, 14%, 1);
+  /* fonts */
+  --ff-primary: 'Playfair Display', serif;
+  --ff-secondary: "Lato", sans-serif;
+  /* Others */
+  --transition: all 0.3s linear;
+  --spacing: 0.1rem;
+  --radius: 100px;
+  --light-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  --dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  --max-width: 1170px;
+  --fixed-width: 620px;
+}
+/*
+=============== 
+Global Styles
+===============
+*/
+
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: var(--ff-secondary);
+  background-color: white;
+  color: var(--clr-secondary-text);
+  line-height: 1.5;
+  font-size: 0.875rem;
+}
+ul {
+  list-style-type: none;
+}
+a {
+  text-decoration: none;
+}
+h1,
+h2,
+h3,
+h4 {
+  letter-spacing: var(--spacing);
+  text-transform: capitalize;
+  line-height: 1.25;
+  margin-bottom: 0.75rem;
+  font-family: var(--ff-primary);
+}
+h1 {
+  font-size: 3rem;
+}
+h2 {
+  font-size: 2rem;
+}
+h3 {
+  font-size: 1.25rem;
+}
+h4 {
+  font-size: 1rem;
+  margin: 0;
+}
+p {
+  margin-bottom: 1.25rem;
+  color: var(--clr-grey-5);
+}
+@media screen and (min-width: 800px) {
+  h1 {
+    font-size: 4rem;
+  }
+  h2 {
+    font-size: 2.5rem;
+  }
+  h3 {
+    font-size: 1.75rem;
+  }
+  h4 {
+    font-size: 1.25rem;
+    margin: 0;
+  }
+  body {
+    font-size: 1rem;
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    line-height: 1;
+  }
+}
+
+/* Hero */
+
+.hero {
+  display: flex;
+  height: 100vh;
+}
+
+/* Left Section */
+.left {
+  display: flex;
+  width: 30%;
+  background: var(--bg-primary);
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.title {
+  color: white;
+  text-transform: uppercase;
+  font-family: 'Roboto', sans-serif;
+}
+
+.img--container {
+  transform: translateX;
+  transform: translateX(30%);
+}
+
+.social--container {
+  display: flex;
+  text-align: center;
+}
+
+.social--container > li {
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: var(--radius);
+  background: rgba(128,128,128,.5);
+  margin: .5rem;
+}
+
+.social--container > li:hover {
+  opacity: 1;
+  background: rgba(128,128,128,1);
+}
+
+/* Right */
+
+.right {
+  margin-left: 20%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  max-width: 600px;
+}
+
+/* Nav Bar */
+
+.nav--container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1rem 2rem;
+}
+
+.brand {
+  display: none;
+}
+
+/* Search Bar */
+
+.search--container {
+  display: flex;
+  flex-direction: row;
+  height: 3rem;
+  justify-content: space-between;
+  border-radius: var(--radius);
+  background: var(--bg-search);
+  padding: 0 1rem;
+}
+
+.search--icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.search--input{    
+  border: none;
+  background: transparent;
+  width: 100%;
+}
+
+::placeholder {
+  color: var(--clr-search-text);
+  font-size: 1.2rem;
+  opacity: .4;
+}
+
+/* Info */
+
+.info {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  place-items: center;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.info--container {
+  display: flex;
+  align-items: center;
+  border: 2px solid #EDEDED;
+  margin: 1rem;
+  width: 6.75rem;
+  height: 2.5rem;
+  justify-content: space-around;
+  border-radius: var(--radius)
+}
+
+.add-to-card--container {
+  display: grid;
+  grid-template-columns: repeat(2, 50%);
+}
+
+.add-to-card--container > div {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 3rem;
+}
+
+.add-to-card--container > div:nth-child(1) {
+  background: ;
+  background-color: var(--bg-button);
+  border-radius: var(--radius);
+  display: flex;
+  align-items: center;
+  color: white;
+}
+
